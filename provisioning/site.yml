@@ -9,5 +9,13 @@
          - httpd
     - name: start httpd service
       service: name=httpd state=started enabled=yes
-
-      
+    - name: install packages docker
+      shell: curl -fsSL https://get.docker.com/ | sh
+    - name: export docker
+      lineinfile: dest=/root/.bashrc line="export FLUENTD_CONF=/fluentd/conf/fluent-worker.conf"
+    - name: start docker service
+      service: name=docker state=started enabled=yes
+    - name: build docker service
+      shell: docker build -t vagrant-fluentd /home/vagrant/sync/docker/fluentd
+    - name: chmod
+      shell: chmod o+x /var/log/httpd

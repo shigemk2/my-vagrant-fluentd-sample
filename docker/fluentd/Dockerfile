@@ -39,7 +39,7 @@ ENV GEM_PATH /home/fluent/.gem/ruby/2.2.0:$GEM_PATH
 ENV LANG ja_JP.UTF-8
 
 ENV FLUENTD_OPT=""
-ENV FLUENTD_CONF="/fluentd/conf/fluent.conf"
+ENV FLUENTD_CONF="/fluentd/conf/fluent-aggregator.conf"
 ENV RUBY_GC_MALLOC_LIMIT=2000000
 ENV RUBY_GC_MALLOC_LIMIT_MAX=4000000
 
