@@ -19,3 +19,5 @@
       shell: docker build -t vagrant-fluentd /home/vagrant/sync/docker/fluentd
     - name: chmod
       shell: chmod o+x /var/log/httpd
+    - name: export
+      shell: /home/vagrant/sync/provisioning/export.sh
